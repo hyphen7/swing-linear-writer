@@ -6,6 +6,10 @@ app.get('/', (req, res) => {
     res.send("Hello, world!");
 });
 
+app.get('/api/v1/task1', (req, res) => {
+    res.send("Run Task1");
+});
+
 app.listen(PORT, ()=>{
     console.log("Express is running.");
 });
