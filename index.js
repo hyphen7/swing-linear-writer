@@ -16,8 +16,8 @@ app.post('/api/v1/task1', (req, res) => {
         console.log("Start Task1");
         task1().then(() => {
             console.log("End Task1");
+            res.json({message: "Exec Task1"});
         });
-        res.json({message: "Exec Task1"});
     } else {
         console.log("Unauthorized Error");
         res.status(401).json({message: "Unauthorized"});
