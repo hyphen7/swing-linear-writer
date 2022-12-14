@@ -1,3 +1,3 @@
 # swing-linear-writer
 
-https://spring-green-bat-kit.cyclic.app/
+https://pink-healthy-cocoon.cyclic.app/
