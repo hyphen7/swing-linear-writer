@@ -9,6 +9,8 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/v1/task1', (req, res) => {
+    console.log(req.body);
+    console.log(req.body['x-cron-key']);
     const key = req.body['x-cron-key'];
     if (key == process.env.EXEC_KEY) {
         console.log("Exec Task1");
