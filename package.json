@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon -r dotenv/config index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,9 @@
   "homepage": "https://github.com/hyphen7/swing-linear-writer#readme",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.20"
   }
 }
