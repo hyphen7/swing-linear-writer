@@ -19,7 +19,7 @@ app.post('/api/v1/task1', (req, res) => {
         res.send("Exec Task1");
     } else {
         console.log("Invalid KEY");
-        res.send("Invalid KEY");
+        res.status(401).send("Unauthorized - Invalid KEY");
     }
 });
 
