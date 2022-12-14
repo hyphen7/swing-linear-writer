@@ -1,6 +1,7 @@
 const Express = require('express');
 const app = Express();
 const PORT = process.env.PORT || 3000;
+const task1 = require('./task1.js');
 
 app.use(Express.json());
 
@@ -26,7 +27,3 @@ app.post('/api/v1/task1', (req, res) => {
 app.listen(PORT, () => {
     console.log("Express is running.");
 });
-
-async function task1() {
-    await new Promise(resolve => setTimeout(resolve, 3000));
-}
