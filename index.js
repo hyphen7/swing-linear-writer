@@ -12,14 +12,14 @@ app.post('/api/v1/task1', (req, res) => {
     const key = req.headers['x-cron-key'] || req.body['x-cron-key'];
     console.log(key);
     if (key == process.env.EXEC_KEY) {
-        console.log("Exec Task1");
+        console.log("Start Task1");
         task1().then(() => {
             console.log("End Task1");
         });
-        res.send("Exec Task1");
+        res.json({message: "Exec Task1"});
     } else {
-        console.log("Invalid KEY");
-        res.status(401).send("Unauthorized - Invalid KEY");
+        console.log("Unauthorized Error");
+        res.status(401).json({message: "Unauthorized"});
     }
 });
 
