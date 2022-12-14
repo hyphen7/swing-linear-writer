@@ -1,0 +1,24 @@
+{
+  "name": "swing-linear-writer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"s
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyphen7/swing-linear-writer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyphen7/swing-linear-writer/issues"
+  },
+  "homepage": "https://github.com/hyphen7/swing-linear-writer#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
