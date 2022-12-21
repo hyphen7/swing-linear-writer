@@ -19,7 +19,7 @@ app.post('/api/v1/task1', (req, res, next) => {
     });
 });
 
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
     console.error(err);
     res.status(500).json({ message: "Internal Server Error" });
 });
