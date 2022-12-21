@@ -5,7 +5,7 @@ const task1 = require('./task1.js');
 
 app.use(Express.json());
 
-app.get('/', (req, res) => {
+app.get('/', (req, res, next) => {
     res.send("Hello, world!");
 });
 
@@ -18,6 +18,11 @@ app.post('/api/v1/task1', (req, res, next) => {
         next(error);
     });
 });
+
+app.use((req, res, next) => {
+    console.log("Not Found");
+    res.status(404).json({ message: "Not Found"});
+})
 
 app.use((err, req, res, next) => {
     console.error(err);
