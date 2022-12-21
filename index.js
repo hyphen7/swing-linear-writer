@@ -9,19 +9,19 @@ app.get('/', (req, res) => {
     res.send("Hello, world!");
 });
 
-app.post('/api/v1/task1', (req, res) => {
-    const key = req.headers['x-cron-key'] || req.body['x-cron-key'];
-    console.log(key);
-    if (key == process.env.EXEC_KEY) {
-        console.log("Start Task1");
-        task1().then(() => {
-            console.log("End Task1");
-            res.json({message: "Exec Task1"});
-        });
-    } else {
-        console.log("Unauthorized Error");
-        res.status(401).json({message: "Unauthorized"});
-    }
+app.post('/api/v1/task1', (req, res, next) => {
+    console.log("Start Task1");
+    task1().then(() => {
+        console.log("End Task1");
+        res.json({ message: "Exec Task1" });
+    }).catch(error => {
+        next(error);
+    });
+});
+
+app.use((err, req, res) => {
+    console.error(err);
+    res.status(500).json({ message: "Internal Server Error" });
 });
 
 app.listen(PORT, () => {
